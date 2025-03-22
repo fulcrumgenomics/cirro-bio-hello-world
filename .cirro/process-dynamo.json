@@ -1,0 +1,15 @@
+{
+    "childProcessIds": [],
+    "code": {
+        "repository": "GITHUBPRIVATE",
+        "script": "main.nf",
+        "uri": "fulcrumgenomics/cirro-bio-hello-world",
+        "version": "master"
+    },
+    "desc": "Hello World for Cirro.bio",
+    "documentationUrl": "",
+    "executor": "NEXTFLOW",
+    "id": "cirro-bio-hello-world",
+    "name": "Cirro.bio Hello World",
+    "parentProcessIds": []
+}

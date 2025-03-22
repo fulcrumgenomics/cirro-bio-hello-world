@@ -7,10 +7,20 @@ process sayHello {
     stdout
   script:
     """
-    echo '$x world!'
+    echo 'words'
+    echo '$x'
     """
 }
 
 workflow {
-  Channel.of('Bonjour', 'Ciao', 'Hello', 'Hola') | sayHello | view
+  if (!params.words_txt) {
+    exit 1, "Missing input words.txt"
+  }
+
+  // Log the input parameters
+  log.info "Input words: ${params.words_txt}"
+
+  Channel.fromPath(params.words_txt) 
+    | sayHello 
+	| collectFile( name: "words.txt", keepHeader: true, sort: true )
 }

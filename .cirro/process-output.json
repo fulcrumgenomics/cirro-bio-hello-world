@@ -1,0 +1,29 @@
+{
+    "commands": [
+        {
+            "command": "hot.Parquet",
+            "params": {
+                "cols": [
+                    {
+                        "col": "words",
+                        "desc": "Words",
+                        "name": "words"
+                    }
+                ],
+                "desc": "Words TXT",
+                "name": "words.txt",
+                "read_csv": {
+                    "parse": {
+                        "delimiter": ","
+                    }
+                },
+                "source": "$data_directory/words.txt",
+                "target": "words.txt.parquet"
+            }
+        },
+        {
+            "command": "hot.Manifest",
+            "params": {}
+        }
+    ]
+}
